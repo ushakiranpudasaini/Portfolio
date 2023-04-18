@@ -1,0 +1,1075 @@
+<html class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                },
+                fontFamily: {
+                    poppins: ['Poppins', 'sans-serif'],
+                    Montserrat: ['Montserrat', 'sans-serif']
+                },
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <title>
+        Document
+    </title>
+</head>
+
+<body class="font-poppins dark:bg-gray-900 bg-gradient-to-r from-[#f0979721] via-[#b0bdce70] to-[#6ed1b847]">
+
+    <div class="">
+        <div class="body-content" x-data="{ open: true }">
+            <div class="relative lg:block navbar-menu">
+                <section class="relative z-40 py-2 bg-gray-100 shadow lg:hidden lg:py-0 dark:bg-gray-900">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="" x-data="{ openMenu : false }"
+                            :class="openMenu ? 'overflow-hidden' : 'overflow-visible' ">
+                            <style>
+                                [x-cloak] {
+                                    display: none !important;
+                                }
+                            </style>
+                            <header class="items-center justify-between px-4 lg:flex drop-shadow-sm">
+                                <div class="flex justify-between">
+                                    <a href="index.html" class="mr-4">
+                                        <div class="h-[2rem] w-32 md:h-[3.5rem]">
+                                            <img src="assets/images/logo1.png" alt="logo"
+                                                class="object-cover w-full h-full">
+                                        </div>
+                                    </a>
+                                    <button class="align-middle lg:hidden" @click="openMenu = !openMenu"
+                                        :aria-expanded="openMenu" aria-controls="mobile-navigation"
+                                        aria-label="Navigation Menu" aria-expanded="false">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="w-6 h-6 text-gray-700 dark:text-gray-400" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M4 6h16M4 12h16M4 18h16"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </header>
+                            <nav id="mobile-navigation"
+                                class="fixed top-0 bottom-0 left-0 right-0 z-40 text-gray-100 bg-[#00000063]"
+                                :class="openMenu ? 'visible' : 'invisible' " x-cloak>
+                                <!-- UL Links -->
+                                <ul class="absolute top-0 bottom-0 left-0 right-0 z-10 py-8 transition-all bg-white dark:bg-gray-800 w-96 drop-shadow-2xl"
+                                    :class="closemenu ? 'translate-x-0' : 'translate-x-full'">
+                                    <li x-data="{ open: false }"
+                                        class="relative text-gray-700 border-b dark:text-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 border-inherit">
+                                        <a href="javascript:void(0)" @click="open = ! open"
+                                            class="flex items-center p-4 text-gray-700 dark:hover:text-gray-100 group dark:text-gray-300 hover:text-blue-500">
+                                            <span> Home </span>
+                                            <span
+                                                class="inline-block ml-auto  absolute right-0  left-[19rem] sidenav-arrow">
+                                                <svg class="w-3 h-3 group-" viewBox="0 0 10 6" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" data-config-id="auto-svg-3-1">
+                                                    <path
+                                                        d="M9.08329 0.666626C8.74996 0.333293 8.24996 0.333293 7.91663 0.666626L4.99996 3.58329L2.08329 0.666626C1.74996 0.333293 1.24996 0.333293 0.916626 0.666626C0.583293 0.999959 0.583293 1.49996 0.916626 1.83329L4.41663 5.33329C4.58329 5.49996 4.74996 5.58329 4.99996 5.58329C5.24996 5.58329 5.41663 5.49996 5.58329 5.33329L9.08329 1.83329C9.41663 1.49996 9.41663 0.999959 9.08329 0.666626Z"
+                                                        fill="currentColor"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <div class="transition border-gray-500 dark:bg-gray-900 dropdown-section nested-menu"
+                                            x-show="open">
+                                            <ul
+                                                class="pl-3 ml-3 text-sm font-medium divide-y divide-gray-300 dark:divide-gray-600 divide-dashed">
+                                                <li class="flex group">
+                                                    <a href="index.html"
+                                                        class="flex items-center py-2 mr-4 no-underline group-hover:text-blue-600 dark:group-hover:text-gray-100 dark:text-gray-400 ">
+                                                        <span
+                                                            class="ml-2 text-sm text-gray-500 dark:group-hover:text-gray-100 group-hover:text-blue-600 dark:text-gray-400 ">
+                                                            Homepage 1
+                                                        </span></a>
+                                                </li>
+                                                <li class="flex group">
+                                                    <a href="home2.html"
+                                                        class="flex items-center py-2 mr-4 no-underline group-hover:text-blue-600 dark:group-hover:text-gray-100 dark:text-gray-400 ">
+                                                        <span
+                                                            class="ml-2 text-sm text-gray-500 dark:group-hover:text-gray-100 group-hover:text-blue-600 dark:text-gray-400 ">
+                                                            Homepage 2
+                                                        </span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li
+                                        class="text-gray-700 border-b hover:bg-gray-100 dark:text-gray-300 dark:border-gray-700 border-inherit">
+                                        <a href="about.html" class="block p-4">About us</a>
+                                    </li>
+                                    <li x-data="{ open: false }"
+                                        class="relative text-gray-700 border-b dark:text-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 border-inherit">
+                                        <a href="javascript:void(0)" @click="open = ! open"
+                                            class="flex items-center p-4 text-gray-700 dark:hover:text-gray-100 group dark:text-gray-300 hover:text-blue-500">
+                                            <span> Courses </span>
+                                            <span
+                                                class="inline-block ml-auto  absolute right-0  left-[19rem] sidenav-arrow">
+                                                <svg class="w-3 h-3 group-" viewBox="0 0 10 6" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" data-config-id="auto-svg-3-1">
+                                                    <path
+                                                        d="M9.08329 0.666626C8.74996 0.333293 8.24996 0.333293 7.91663 0.666626L4.99996 3.58329L2.08329 0.666626C1.74996 0.333293 1.24996 0.333293 0.916626 0.666626C0.583293 0.999959 0.583293 1.49996 0.916626 1.83329L4.41663 5.33329C4.58329 5.49996 4.74996 5.58329 4.99996 5.58329C5.24996 5.58329 5.41663 5.49996 5.58329 5.33329L9.08329 1.83329C9.41663 1.49996 9.41663 0.999959 9.08329 0.666626Z"
+                                                        fill="currentColor"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <div class="transition border-gray-500 dark:bg-gray-900 dropdown-section nested-menu"
+                                            x-show="open">
+                                            <ul
+                                                class="pl-3 ml-3 text-sm font-medium divide-y divide-gray-300 dark:divide-gray-600 divide-dashed">
+                                                <li class="flex group">
+                                                    <a href="course-grid.html"
+                                                        class="flex items-center py-2 mr-4 no-underline group-hover:text-blue-600 dark:group-hover:text-gray-100 dark:text-gray-400 ">
+                                                        <span
+                                                            class="ml-2 text-sm text-gray-500 dark:group-hover:text-gray-100 group-hover:text-blue-600 dark:text-gray-400 ">
+                                                            Course Grid
+                                                        </span></a>
+                                                </li>
+                                                <li class="flex group">
+                                                    <a href="course-details.html"
+                                                        class="flex items-center py-2 mr-4 no-underline group-hover:text-blue-600 dark:group-hover:text-gray-100 dark:text-gray-400 ">
+                                                        <span
+                                                            class="ml-2 text-sm text-gray-500 dark:group-hover:text-gray-100 group-hover:text-blue-600 dark:text-gray-400 ">
+                                                            Course Details
+                                                        </span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li x-data="{ open: false }"
+                                        class="relative text-gray-700 border-b dark:text-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 border-inherit">
+                                        <a href="javascript:void(0)" @click="open = ! open"
+                                            class="flex items-center p-4 text-gray-700 dark:hover:text-gray-100 group dark:text-gray-300 hover:text-blue-500">
+                                            <span> Blog </span>
+                                            <span
+                                                class="inline-block ml-auto  absolute right-0  left-[19rem] sidenav-arrow">
+                                                <svg class="w-3 h-3 group-" viewBox="0 0 10 6" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" data-config-id="auto-svg-3-1">
+                                                    <path
+                                                        d="M9.08329 0.666626C8.74996 0.333293 8.24996 0.333293 7.91663 0.666626L4.99996 3.58329L2.08329 0.666626C1.74996 0.333293 1.24996 0.333293 0.916626 0.666626C0.583293 0.999959 0.583293 1.49996 0.916626 1.83329L4.41663 5.33329C4.58329 5.49996 4.74996 5.58329 4.99996 5.58329C5.24996 5.58329 5.41663 5.49996 5.58329 5.33329L9.08329 1.83329C9.41663 1.49996 9.41663 0.999959 9.08329 0.666626Z"
+                                                        fill="currentColor"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <div class="transition border-gray-500 dark:bg-gray-900 dropdown-section nested-menu"
+                                            x-show="open">
+                                            <ul
+                                                class="pl-3 ml-3 text-sm font-medium divide-y divide-gray-300 dark:divide-gray-600 divide-dashed">
+                                                <li class="flex group">
+                                                    <a href="blog.html"
+                                                        class="flex items-center py-2 mr-4 no-underline group-hover:text-blue-600 dark:group-hover:text-gray-100 dark:text-gray-400 ">
+                                                        <span
+                                                            class="ml-2 text-sm text-gray-500 dark:group-hover:text-gray-100 group-hover:text-blue-600 dark:text-gray-400 ">
+                                                            Blog Grid
+                                                        </span></a>
+                                                </li>
+                                                <li class="flex group">
+                                                    <a href="blog-details.html"
+                                                        class="flex items-center py-2 mr-4 no-underline group-hover:text-blue-600 dark:group-hover:text-gray-100 dark:text-gray-400 ">
+                                                        <span
+                                                            class="ml-2 text-sm text-gray-500 dark:group-hover:text-gray-100 group-hover:text-blue-600 dark:text-gray-400 ">
+                                                            Blog Details
+                                                        </span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li
+                                        class="text-gray-700 border-b hover:bg-gray-100 dark:text-gray-300 dark:border-gray-700 border-inherit">
+                                        <a href="contact.html" class="block p-4">Contact</a>
+                                    </li>
+                                </ul>
+                                <!-- Close Button -->
+                                <button class="absolute top-0 bottom-0 right-0 z-10 left-80"
+                                    @click="openMenu = !openMenu" :aria-expanded="openMenu"
+                                    aria-controls="mobile-navigation" aria-label="Close Navigation Menu">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="absolute w-6 h-6 text-gray-700 hover:text-blue-600 dark:text-gray-400 top-2 left-2"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
+                <nav class="fixed top-0 bottom-0 left-0 z-40 flex flex-col overflow-hidden transition-all border-r border-gray-200 lg:mt-0 dark:bg-gray-900 lg:border-none dark:border-gray-800"
+                    id="sidenav">
+                    <div class="justify-start hidden lg:flex">
+                        <a href="home2.html">
+                            <div class="h-[3rem] lg:w-24 md:h-[4rem]">
+                                <img src="assets/images/logo1.png" alt="logo" class="object-cover w-full h-full">
+                            </div>
+                        </a>
+                    </div>
+                    <aside
+                        class="relative hidden lg:flex flex-col items-center justify-center w-full h-full w-24 space-y-10 text-white bg-[#012245]">
+                        <div
+                            class="relative flex items-center justify-center w-10 h-10 rounded-lg cursor-pointer group hover:text-gray-800 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="w-6 h-6 bi bi-house-door" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z">
+                                </path>
+                            </svg>
+                            <div class="absolute top-0 left-0 flex -ml-[14px]">
+                                <a href="#home" class="flex items-center">
+                                    <div
+                                        class="relative flex items-center justify-center p-3 mb-3 text-gray-100 transition-all duration-300 rounded -translate-x-28 dark:bg-gray-700 dark:text-white group-hover:translate-x-0 wishlist dark:hover:bg-red-600 group">
+                                        Home
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div
+                            class="relative flex items-center justify-center w-10 h-10 rounded-lg cursor-pointer group hover:text-gray-800 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="w-6 h-6 bi bi-person" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z">
+                                </path>
+                            </svg>
+                            <div class="absolute top-0 left-0 flex -ml-[14px]">
+                                <a href="#about" class="flex items-center">
+                                    <div
+                                        class="relative flex items-center justify-center p-3 mb-3 text-gray-100 transition-all duration-300 rounded -translate-x-28 dark:bg-gray-700 dark:text-white group-hover:translate-x-0 wishlist dark:hover:bg-red-600 group">
+                                        About
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div
+                            class="relative flex items-center justify-center w-10 h-10 rounded-lg cursor-pointer group hover:text-gray-800 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="w-6 h-6 bi bi-gear" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z">
+                                </path>
+                                <path
+                                    d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z">
+                                </path>
+                            </svg>
+                            <div class="absolute top-0 left-0 flex -ml-[14px]">
+                                <a href="#services" class="flex items-center">
+                                    <div
+                                        class="relative flex items-center justify-center p-3 mb-3 text-gray-100 transition-all duration-300 rounded -translate-x-28 dark:bg-gray-700 dark:text-white group-hover:translate-x-0 wishlist dark:hover:bg-red-600 group">
+                                        Services
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div
+                            class="relative flex items-center justify-center w-10 h-10 rounded-lg cursor-pointer group hover:text-gray-800 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="w-6 h-6 bi bi-briefcase" viewBox="0 0 16 16">
+                                <path
+                                    d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z">
+                                </path>
+                            </svg>
+                            <div class="absolute top-0 left-0 flex -ml-[14px]">
+                                <a href="#portfolio" class="flex items-center">
+                                    <div
+                                        class="relative flex items-center justify-center p-3 mb-3 text-gray-100 transition-all duration-300 rounded -translate-x-28 dark:bg-gray-700 dark:text-white group-hover:translate-x-0 wishlist dark:hover:bg-red-600 group">
+                                        Portfolio
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div
+                            class="relative flex items-center justify-center w-10 h-10 rounded-lg cursor-pointer group hover:text-gray-800 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="w-6 h-6 bi bi-file-earmark" viewBox="0 0 16 16">
+                                <path
+                                    d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z">
+                                </path>
+                            </svg>
+                            <div class="absolute top-0 left-0 flex -ml-[14px]">
+                                <a href="#resume" class="flex items-center">
+                                    <div
+                                        class="relative flex items-center justify-center p-3 mb-3 text-gray-100 transition-all duration-300 rounded -translate-x-28 dark:bg-gray-700 dark:text-white group-hover:translate-x-0 wishlist dark:hover:bg-red-600 group">
+                                        Resume
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div
+                            class="relative flex items-center justify-center w-10 h-10 rounded-lg cursor-pointer group hover:text-gray-800 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="w-6 h-6 bi bi-person-rolodex" viewBox="0 0 16 16">
+                                <path d="M8 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"></path>
+                                <path
+                                    d="M1 1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h.5a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h.5a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6.707L6 1.293A1 1 0 0 0 5.293 1H1Zm0 1h4.293L6 2.707A1 1 0 0 0 6.707 3H15v10h-.085a1.5 1.5 0 0 0-2.4-.63C11.885 11.223 10.554 10 8 10c-2.555 0-3.886 1.224-4.514 2.37a1.5 1.5 0 0 0-2.4.63H1V2Z">
+                                </path>
+                            </svg>
+                            <div class="absolute top-0 left-0 flex -ml-[14px]">
+                                <a href="#contact" class="flex items-center">
+                                    <div
+                                        class="relative flex items-center justify-center p-3 mb-3 text-gray-100 transition-all duration-300 rounded -translate-x-28 dark:bg-gray-700 dark:text-white group-hover:translate-x-0 wishlist dark:hover:bg-red-600 group">
+                                        Contact
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                </nav>
+            </div>
+            <div class="mx-auto transition-all bg-center bg-cover content-wrapper no-repeat">
+                <div class="max-w-6xl px-4 pt-10 mx-auto lg:pt-52 ">
+                    <div class="flex flex-wrap items-center justify-center py-10 -mx-4 lg:py-20" id="home">
+                        <div class="w-full px-4 mb-16 md:w-1/2 md:mb-0">
+                            <span
+                                class="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-600">
+                                Hi I'm</span>
+                            <h1
+                                class="mt-2 mb-6 text-3xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
+                                Edwin William</h1>
+                            <p class="mb-4 text-lg font-medium text-gray-600 md:text-xl">
+                                Java Developer and Freelancer</p>
+                            <p class="mb-6 text-gray-500">
+                                with over 10 years of experience on web design and development. Lorem ipsum dolor sit
+                                amet consectetur adipisicing elit. N oumquam quo provident, facere minus temporibus
+                                veniam nostrum reprehenderit nihil?
+                            </p>
+                            <div class="flex flex-wrap">
+                                <div class="w-full py-1 md:w-auto md:py-0 md:mr-4"><a
+                                        class="inline-block w-full px-6 py-3 text-base font-medium leading-4 text-center bg-red-500 border border-red-500 rounded-full shadow-sm md:text-lg text-red-50 hover:bg-red-600 focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+                                        href="#">Download CV</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative w-full px-4 mb-10 md:w-1/2 lg:mb-0">
+                            <div
+                                class="relative z-40 rounded-full bg-gradient-to-tr from-[#87c9e5ad]  sm:h-96 sm:w-96 w-64 h-64 md:w-96 md:h-96 via-[#e1d261ad] to-[#d82084c4]">
+                                <img src="assets/images/uu.png" alt="image"
+                                    class="object-cover w-full h-64 rounded-md sm:h-72 md:h-96">
+                            </div>
+                            <div class="absolute top-0 inline-flex items-center justify-center -mt-6 right-20">
+                                <svg width="290" height="166" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="a" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                        width="290" height="166">
+                                        <path fill="url(#paint0_linear_228_431)" d="M0 0H290V165.838H0z"></path>
+                                    </mask>
+                                    <g mask="url(#a)" fill-rule="evenodd" clip-rule="evenodd">
+                                        <path
+                                            d="M-.146 77.865c0-1.363 1.13-2.468 2.524-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469zm21.236-2.468c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm16.185 2.468c0-1.363 1.13-2.468 2.524-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469zm21.236-2.468c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm72.314 2.468c0-1.363 1.13-2.468 2.525-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.395 0-2.525-1.105-2.525-2.469zm-18.709 0c0-1.363 1.13-2.468 2.524-2.468 1.395 0 2.525 1.105 2.525 2.468 0 1.364-1.13 2.469-2.525 2.469-1.394 0-2.524-1.105-2.524-2.469zm-16.187-2.468c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.234 2.468c0-1.363 1.13-2.468 2.525-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.525-1.105-2.525-2.469zm58.655-16.824c-1.395 0-2.525 1.105-2.525 2.468 0 1.364 1.13 2.469 2.525 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.234 2.468c0-1.363 1.13-2.468 2.524-2.468 1.395 0 2.525 1.105 2.525 2.468 0 1.364-1.13 2.469-2.525 2.469-1.394 0-2.524-1.105-2.524-2.469zm-16.187-2.468c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.234 2.468c0-1.363 1.13-2.468 2.525-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.525-1.105-2.525-2.469zm-16.184-2.468c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.236 2.468c0-1.363 1.13-2.468 2.524-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469zM21.09 61.041c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zM-.146 63.509c0-1.363 1.13-2.468 2.524-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469zM133.35 46.684c-1.395 0-2.525 1.106-2.525 2.469 0 1.363 1.13 2.469 2.525 2.469 1.394 0 2.524-1.106 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.234 2.469c0-1.363 1.13-2.468 2.524-2.468 1.395 0 2.525 1.105 2.525 2.468s-1.13 2.469-2.525 2.469c-1.394 0-2.524-1.106-2.524-2.469zm-16.187-2.468c-1.394 0-2.524 1.105-2.524 2.468s1.13 2.469 2.524 2.469c1.394 0 2.524-1.106 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.234 2.468c0-1.363 1.13-2.468 2.525-2.468 1.394 0 2.524 1.105 2.524 2.468s-1.13 2.469-2.524 2.469c-1.394 0-2.525-1.106-2.525-2.469zm-16.184-2.468c-1.394 0-2.524 1.105-2.524 2.468s1.13 2.469 2.524 2.469c1.394 0 2.524-1.106 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.236 2.468c0-1.363 1.13-2.468 2.524-2.468 1.394 0 2.524 1.105 2.524 2.468s-1.13 2.469-2.524 2.469c-1.394 0-2.524-1.106-2.524-2.469zM21.09 46.685c-1.394 0-2.524 1.105-2.524 2.468s1.13 2.469 2.524 2.469c1.394 0 2.524-1.106 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zM-.146 49.153c0-1.363 1.13-2.468 2.524-2.468 1.394 0 2.524 1.105 2.524 2.468s-1.13 2.469-2.524 2.469c-1.394 0-2.524-1.106-2.524-2.469zM133.35 32.328c-1.395 0-2.525 1.105-2.525 2.469 0 1.363 1.13 2.468 2.525 2.468 1.394 0 2.524-1.105 2.524-2.468s-1.13-2.469-2.524-2.469zm-21.234 2.469c0-1.363 1.13-2.469 2.524-2.469 1.395 0 2.525 1.105 2.525 2.469 0 1.363-1.13 2.468-2.525 2.468-1.394 0-2.524-1.105-2.524-2.468zm-16.187-2.469c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.525-1.105 2.525-2.468s-1.13-2.469-2.525-2.469zm-21.234 2.469c0-1.363 1.13-2.469 2.525-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.525-1.105-2.525-2.468zm-16.184-2.469c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.524-1.105 2.524-2.468s-1.13-2.469-2.524-2.469zm-21.236 2.469c0-1.363 1.13-2.469 2.524-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468zM21.09 32.328c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.524-1.105 2.524-2.468s-1.13-2.469-2.524-2.469zM-.146 34.797c0-1.363 1.13-2.469 2.524-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468zM133.35 17.972c-1.395 0-2.525 1.105-2.525 2.469 0 1.363 1.13 2.468 2.525 2.468 1.394 0 2.524-1.105 2.524-2.468 0-1.364-1.13-2.469-2.524-2.469zm-21.234 2.469c0-1.364 1.13-2.469 2.524-2.469 1.395 0 2.525 1.105 2.525 2.469 0 1.363-1.13 2.468-2.525 2.468-1.394 0-2.524-1.105-2.524-2.468zm-16.187-2.469c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.525-1.105 2.525-2.468 0-1.364-1.13-2.469-2.525-2.469zm-21.234 2.469c0-1.364 1.13-2.469 2.525-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.525-1.105-2.525-2.468zm-16.184-2.469c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.524-1.105 2.524-2.468 0-1.364-1.13-2.469-2.524-2.469zm-21.236 2.469c0-1.364 1.13-2.469 2.524-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468zM21.09 17.972c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.524-1.105 2.524-2.468 0-1.364-1.13-2.469-2.524-2.469zM-.146 20.441c0-1.364 1.13-2.469 2.524-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468zM133.35 3.619c-1.395 0-2.525 1.105-2.525 2.468 0 1.364 1.13 2.469 2.525 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.234 2.468c0-1.363 1.13-2.468 2.524-2.468 1.395 0 2.525 1.105 2.525 2.468 0 1.364-1.13 2.469-2.525 2.469-1.394 0-2.524-1.105-2.524-2.469zM95.929 3.62c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.525-1.105 2.525-2.469 0-1.363-1.13-2.468-2.525-2.468zM74.695 6.087c0-1.363 1.13-2.468 2.525-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.525-1.105-2.525-2.469zM58.511 3.62c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zM37.275 6.087c0-1.363 1.13-2.468 2.524-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469zM21.09 3.62c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zM-.146 6.087c0-1.363 1.13-2.468 2.524-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469z"
+                                            fill="url(#paint1_linear_228_431)"></path>
+                                        <path
+                                            d="M-.146 163.37c0-1.363 1.13-2.468 2.524-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469zm21.236-2.468c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm16.185 2.468c0-1.363 1.13-2.468 2.524-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469zm21.236-2.468c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm72.314 2.468c0-1.363 1.13-2.468 2.525-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.395 0-2.525-1.105-2.525-2.469zm-18.709 0c0-1.363 1.13-2.468 2.524-2.468 1.395 0 2.525 1.105 2.525 2.468 0 1.364-1.13 2.469-2.525 2.469-1.394 0-2.524-1.105-2.524-2.469zm-16.187-2.468c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.234 2.468c0-1.363 1.13-2.468 2.525-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.525-1.105-2.525-2.469zm58.655-16.824c-1.395 0-2.525 1.105-2.525 2.468s1.13 2.469 2.525 2.469c1.394 0 2.524-1.106 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.234 2.468c0-1.363 1.13-2.468 2.524-2.468 1.395 0 2.525 1.105 2.525 2.468s-1.13 2.469-2.525 2.469c-1.394 0-2.524-1.106-2.524-2.469zm-16.187-2.468c-1.394 0-2.524 1.105-2.524 2.468s1.13 2.469 2.524 2.469c1.394 0 2.524-1.106 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.234 2.468c0-1.363 1.13-2.468 2.525-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.525-1.105-2.525-2.469zm-16.184-2.468c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.236 2.468c0-1.363 1.13-2.468 2.524-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469zm-16.185-2.468c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.236 2.468c0-1.363 1.13-2.468 2.524-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469zm133.496-16.825c-1.395 0-2.525 1.105-2.525 2.469 0 1.363 1.13 2.468 2.525 2.468 1.394 0 2.524-1.105 2.524-2.468 0-1.364-1.13-2.469-2.524-2.469zm-21.234 2.469c0-1.364 1.13-2.469 2.524-2.469 1.395 0 2.525 1.105 2.525 2.469 0 1.363-1.13 2.468-2.525 2.468-1.394 0-2.524-1.105-2.524-2.468zm-16.187-2.469c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.524-1.105 2.524-2.468 0-1.364-1.13-2.469-2.524-2.469zm-21.234 2.469c0-1.364 1.13-2.469 2.525-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.525-1.105-2.525-2.468zm-16.184-2.469c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.524-1.105 2.524-2.468 0-1.364-1.13-2.469-2.524-2.469zm-21.236 2.469c0-1.364 1.13-2.469 2.524-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468zm-16.185-2.469c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.524-1.105 2.524-2.468 0-1.364-1.13-2.469-2.524-2.469zm-21.236 2.469c0-1.364 1.13-2.469 2.524-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468zm133.496-16.825c-1.395 0-2.525 1.105-2.525 2.469 0 1.363 1.13 2.468 2.525 2.468 1.394 0 2.524-1.105 2.524-2.468 0-1.364-1.13-2.469-2.524-2.469zm-21.234 2.469c0-1.364 1.13-2.469 2.524-2.469 1.395 0 2.525 1.105 2.525 2.469 0 1.363-1.13 2.468-2.525 2.468-1.394 0-2.524-1.105-2.524-2.468zm-16.187-2.469c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.525-1.105 2.525-2.468 0-1.364-1.13-2.469-2.525-2.469zm-21.234 2.469c0-1.364 1.13-2.469 2.525-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.525-1.105-2.525-2.468zm-16.184-2.469c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.524-1.105 2.524-2.468 0-1.364-1.13-2.469-2.524-2.469zm-21.236 2.469c0-1.364 1.13-2.469 2.524-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468zm-16.185-2.469c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.524-1.105 2.524-2.468 0-1.364-1.13-2.469-2.524-2.469zm-21.236 2.469c0-1.364 1.13-2.469 2.524-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468zm133.496-16.825c-1.395 0-2.525 1.105-2.525 2.469 0 1.363 1.13 2.468 2.525 2.468 1.394 0 2.524-1.105 2.524-2.468 0-1.364-1.13-2.469-2.524-2.469zm-21.234 2.469c0-1.364 1.13-2.469 2.524-2.469 1.395 0 2.525 1.105 2.525 2.469 0 1.363-1.13 2.468-2.525 2.468-1.394 0-2.524-1.105-2.524-2.468zm-16.187-2.469c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.525-1.105 2.525-2.468 0-1.364-1.13-2.469-2.525-2.469zm-21.234 2.469c0-1.364 1.13-2.469 2.525-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.525-1.105-2.525-2.468zm-16.184-2.469c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.524-1.105 2.524-2.468 0-1.364-1.13-2.469-2.524-2.469zm-21.236 2.469c0-1.364 1.13-2.469 2.524-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468zm-16.185-2.469c-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.524-1.105 2.524-2.468 0-1.364-1.13-2.469-2.524-2.469zm-21.236 2.469c0-1.364 1.13-2.469 2.524-2.469 1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468zM133.35 89.124c-1.395 0-2.525 1.105-2.525 2.468 0 1.364 1.13 2.469 2.525 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.234 2.468c0-1.363 1.13-2.468 2.524-2.468 1.395 0 2.525 1.105 2.525 2.468 0 1.364-1.13 2.469-2.525 2.469-1.394 0-2.524-1.105-2.524-2.469zm-16.187-2.468c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.525-1.105 2.525-2.469 0-1.363-1.13-2.468-2.525-2.468zm-21.234 2.468c0-1.363 1.13-2.468 2.525-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.525-1.105-2.525-2.469zm-16.184-2.468c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zm-21.236 2.468c0-1.363 1.13-2.468 2.524-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469zM21.09 89.124c-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.524-1.105 2.524-2.469 0-1.363-1.13-2.468-2.524-2.468zM-.146 91.592c0-1.363 1.13-2.468 2.524-2.468 1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469z"
+                                            fill="url(#paint2_linear_228_431)"></path>
+                                        <path
+                                            d="M284.472 77.866c0-1.363-1.131-2.469-2.525-2.469s-2.524 1.106-2.524 2.469c0 1.363 1.13 2.469 2.524 2.469 1.394 0 2.525-1.106 2.525-2.47zm-21.237-2.469c1.394 0 2.524 1.106 2.524 2.469 0 1.363-1.13 2.469-2.524 2.469-1.394 0-2.524-1.106-2.524-2.47 0-1.362 1.13-2.468 2.524-2.468zm-16.184 2.469c0-1.363-1.131-2.469-2.525-2.469s-2.524 1.106-2.524 2.469c0 1.363 1.13 2.469 2.524 2.469 1.394 0 2.525-1.106 2.525-2.47zm-21.237-2.469c1.394 0 2.525 1.106 2.525 2.469 0 1.363-1.131 2.469-2.525 2.469s-2.524-1.106-2.524-2.47c0-1.362 1.13-2.468 2.524-2.468zM153.5 77.866c0-1.363-1.13-2.469-2.524-2.469-1.395 0-2.525 1.106-2.525 2.469 0 1.363 1.13 2.469 2.525 2.469 1.394 0 2.524-1.106 2.524-2.47zm18.709 0c0-1.363-1.13-2.469-2.524-2.469-1.394 0-2.525 1.106-2.525 2.469 0 1.363 1.131 2.469 2.525 2.469s2.524-1.106 2.524-2.47zm16.187-2.469c1.394 0 2.525 1.106 2.525 2.469 0 1.363-1.131 2.469-2.525 2.469s-2.524-1.106-2.524-2.47c0-1.362 1.13-2.468 2.524-2.468zm21.234 2.469c0-1.363-1.13-2.469-2.525-2.469-1.394 0-2.524 1.106-2.524 2.469 0 1.363 1.13 2.469 2.524 2.469 1.395 0 2.525-1.106 2.525-2.47zM150.976 61.04c1.394 0 2.524 1.106 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.395 0-2.525-1.105-2.525-2.468s1.13-2.469 2.525-2.469zm21.233 2.469c0-1.363-1.13-2.469-2.524-2.469-1.394 0-2.525 1.106-2.525 2.469 0 1.363 1.131 2.468 2.525 2.468s2.524-1.105 2.524-2.468zm16.187-2.469c1.394 0 2.525 1.106 2.525 2.469 0 1.363-1.131 2.468-2.525 2.468s-2.524-1.105-2.524-2.468 1.13-2.469 2.524-2.469zm21.234 2.469c0-1.363-1.13-2.469-2.525-2.469-1.394 0-2.524 1.106-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.395 0 2.525-1.105 2.525-2.468zm16.184-2.469c1.394 0 2.525 1.106 2.525 2.469 0 1.363-1.131 2.468-2.525 2.468s-2.524-1.105-2.524-2.468 1.13-2.469 2.524-2.469zm21.237 2.469c0-1.363-1.131-2.469-2.525-2.469s-2.524 1.106-2.524 2.469c0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.525-1.105 2.525-2.468zm16.184-2.469c1.394 0 2.524 1.106 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468s1.13-2.469 2.524-2.469zm21.237 2.469c0-1.363-1.131-2.469-2.525-2.469s-2.524 1.106-2.524 2.469c0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.525-1.105 2.525-2.468zM150.976 46.685c1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.47-2.524 2.47-1.395 0-2.525-1.106-2.525-2.47 0-1.363 1.13-2.468 2.525-2.468zm21.233 2.468c0-1.363-1.13-2.468-2.524-2.468-1.394 0-2.525 1.105-2.525 2.468 0 1.364 1.131 2.47 2.525 2.47s2.524-1.106 2.524-2.47zm16.187-2.468c1.394 0 2.525 1.105 2.525 2.468 0 1.364-1.131 2.47-2.525 2.47s-2.524-1.106-2.524-2.47c0-1.363 1.13-2.468 2.524-2.468zm21.234 2.468c0-1.363-1.13-2.468-2.525-2.468-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.47 2.524 2.47 1.395 0 2.525-1.106 2.525-2.47zm16.184-2.468c1.394 0 2.525 1.105 2.525 2.468 0 1.364-1.131 2.47-2.525 2.47s-2.524-1.106-2.524-2.47c0-1.363 1.13-2.468 2.524-2.468zm21.237 2.468c0-1.363-1.131-2.468-2.525-2.468s-2.524 1.105-2.524 2.468c0 1.364 1.13 2.47 2.524 2.47 1.394 0 2.525-1.106 2.525-2.47zm16.184-2.468c1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.47-2.524 2.47-1.394 0-2.524-1.106-2.524-2.47 0-1.363 1.13-2.468 2.524-2.468zm21.237 2.468c0-1.363-1.131-2.468-2.525-2.468s-2.524 1.105-2.524 2.468c0 1.364 1.13 2.47 2.524 2.47 1.394 0 2.525-1.106 2.525-2.47zM150.976 32.33c1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.395 0-2.525-1.105-2.525-2.469 0-1.363 1.13-2.468 2.525-2.468zm21.233 2.468c0-1.363-1.13-2.468-2.524-2.468-1.394 0-2.525 1.105-2.525 2.468 0 1.364 1.131 2.469 2.525 2.469s2.524-1.105 2.524-2.469zm16.187-2.468c1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469 0-1.363 1.13-2.468 2.524-2.468zm21.234 2.468c0-1.363-1.13-2.468-2.525-2.468-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.395 0 2.525-1.105 2.525-2.469zm16.184-2.468c1.394 0 2.525 1.105 2.525 2.468 0 1.364-1.131 2.469-2.525 2.469s-2.524-1.105-2.524-2.469c0-1.363 1.13-2.468 2.524-2.468zm21.237 2.468c0-1.363-1.131-2.468-2.525-2.468s-2.524 1.105-2.524 2.468c0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.525-1.105 2.525-2.469zm16.184-2.468c1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469 0-1.363 1.13-2.468 2.524-2.468zm21.237 2.468c0-1.363-1.131-2.468-2.525-2.468s-2.524 1.105-2.524 2.468c0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.525-1.105 2.525-2.469zM150.976 17.973c1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.395 0-2.525-1.105-2.525-2.469 0-1.363 1.13-2.468 2.525-2.468zm21.233 2.468c0-1.363-1.13-2.468-2.524-2.468-1.394 0-2.525 1.105-2.525 2.468 0 1.364 1.131 2.469 2.525 2.469s2.524-1.105 2.524-2.469zm16.187-2.468c1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469 0-1.363 1.13-2.468 2.524-2.468zm21.234 2.468c0-1.363-1.13-2.468-2.525-2.468-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.395 0 2.525-1.105 2.525-2.469zm16.184-2.468c1.394 0 2.525 1.105 2.525 2.468 0 1.364-1.131 2.469-2.525 2.469s-2.524-1.105-2.524-2.469c0-1.363 1.13-2.468 2.524-2.468zm21.237 2.468c0-1.363-1.131-2.468-2.525-2.468s-2.524 1.105-2.524 2.468c0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.525-1.105 2.525-2.469zm16.184-2.468c1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469 0-1.363 1.13-2.468 2.524-2.468zm21.237 2.468c0-1.363-1.131-2.468-2.525-2.468s-2.524 1.105-2.524 2.468c0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.525-1.105 2.525-2.469zM150.976 3.62c1.394 0 2.524 1.106 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.395 0-2.525-1.105-2.525-2.468s1.13-2.469 2.525-2.469zm21.233 2.469c0-1.363-1.13-2.469-2.524-2.469-1.394 0-2.525 1.106-2.525 2.469 0 1.363 1.131 2.468 2.525 2.468s2.524-1.105 2.524-2.468zm16.187-2.469c1.394 0 2.524 1.106 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468s1.13-2.469 2.524-2.469zm21.234 2.469c0-1.363-1.13-2.469-2.525-2.469-1.394 0-2.524 1.106-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.395 0 2.525-1.105 2.525-2.468zm16.184-2.469c1.394 0 2.525 1.106 2.525 2.469 0 1.363-1.131 2.468-2.525 2.468s-2.524-1.105-2.524-2.468 1.13-2.469 2.524-2.469zm21.237 2.469c0-1.363-1.131-2.469-2.525-2.469s-2.524 1.106-2.524 2.469c0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.525-1.105 2.525-2.468zm16.184-2.469c1.394 0 2.524 1.106 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468s1.13-2.469 2.524-2.469zm21.237 2.469c0-1.363-1.131-2.469-2.525-2.469s-2.524 1.106-2.524 2.469c0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.525-1.105 2.525-2.468z"
+                                            fill="url(#paint3_linear_228_431)"></path>
+                                        <path
+                                            d="M284.472 163.37c0-1.363-1.131-2.468-2.525-2.468s-2.524 1.105-2.524 2.468c0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.525-1.105 2.525-2.469zm-21.237-2.468c1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469 0-1.363 1.13-2.468 2.524-2.468zm-16.184 2.468c0-1.363-1.131-2.468-2.525-2.468s-2.524 1.105-2.524 2.468c0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.525-1.105 2.525-2.469zm-21.237-2.468c1.394 0 2.525 1.105 2.525 2.468 0 1.364-1.131 2.469-2.525 2.469s-2.524-1.105-2.524-2.469c0-1.363 1.13-2.468 2.524-2.468zM153.5 163.37c0-1.363-1.13-2.468-2.524-2.468-1.395 0-2.525 1.105-2.525 2.468 0 1.364 1.13 2.469 2.525 2.469 1.394 0 2.524-1.105 2.524-2.469zm18.709 0c0-1.363-1.13-2.468-2.524-2.468-1.394 0-2.525 1.105-2.525 2.468 0 1.364 1.131 2.469 2.525 2.469s2.524-1.105 2.524-2.469zm16.187-2.468c1.394 0 2.525 1.105 2.525 2.468 0 1.364-1.131 2.469-2.525 2.469s-2.524-1.105-2.524-2.469c0-1.363 1.13-2.468 2.524-2.468zm21.234 2.468c0-1.363-1.13-2.468-2.525-2.468-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.395 0 2.525-1.105 2.525-2.469zm-58.654-16.824c1.394 0 2.524 1.105 2.524 2.468s-1.13 2.469-2.524 2.469c-1.395 0-2.525-1.106-2.525-2.469 0-1.363 1.13-2.468 2.525-2.468zm21.233 2.468c0-1.363-1.13-2.468-2.524-2.468-1.394 0-2.525 1.105-2.525 2.468s1.131 2.469 2.525 2.469 2.524-1.106 2.524-2.469zm16.187-2.468c1.394 0 2.525 1.105 2.525 2.468s-1.131 2.469-2.525 2.469-2.524-1.106-2.524-2.469c0-1.363 1.13-2.468 2.524-2.468zm21.234 2.468c0-1.363-1.13-2.468-2.525-2.468-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.395 0 2.525-1.105 2.525-2.469zm16.184-2.468c1.394 0 2.525 1.105 2.525 2.468 0 1.364-1.131 2.469-2.525 2.469s-2.524-1.105-2.524-2.469c0-1.363 1.13-2.468 2.524-2.468zm21.237 2.468c0-1.363-1.131-2.468-2.525-2.468s-2.524 1.105-2.524 2.468c0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.525-1.105 2.525-2.469zm16.184-2.468c1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469 0-1.363 1.13-2.468 2.524-2.468zm21.237 2.468c0-1.363-1.131-2.468-2.525-2.468s-2.524 1.105-2.524 2.468c0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.525-1.105 2.525-2.469zm-133.496-16.825c1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.395 0-2.525-1.105-2.525-2.468 0-1.364 1.13-2.469 2.525-2.469zm21.233 2.469c0-1.364-1.13-2.469-2.524-2.469-1.394 0-2.525 1.105-2.525 2.469 0 1.363 1.131 2.468 2.525 2.468s2.524-1.105 2.524-2.468zm16.187-2.469c1.394 0 2.525 1.105 2.525 2.469 0 1.363-1.131 2.468-2.525 2.468s-2.524-1.105-2.524-2.468c0-1.364 1.13-2.469 2.524-2.469zm21.234 2.469c0-1.364-1.13-2.469-2.525-2.469-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.395 0 2.525-1.105 2.525-2.468zm16.184-2.469c1.394 0 2.525 1.105 2.525 2.469 0 1.363-1.131 2.468-2.525 2.468s-2.524-1.105-2.524-2.468c0-1.364 1.13-2.469 2.524-2.469zm21.237 2.469c0-1.364-1.131-2.469-2.525-2.469s-2.524 1.105-2.524 2.469c0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.525-1.105 2.525-2.468zm16.184-2.469c1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468 0-1.364 1.13-2.469 2.524-2.469zm21.237 2.469c0-1.364-1.131-2.469-2.525-2.469s-2.524 1.105-2.524 2.469c0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.525-1.105 2.525-2.468zm-133.496-16.825c1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.395 0-2.525-1.105-2.525-2.468 0-1.364 1.13-2.469 2.525-2.469zm21.233 2.469c0-1.364-1.13-2.469-2.524-2.469-1.394 0-2.525 1.105-2.525 2.469 0 1.363 1.131 2.468 2.525 2.468s2.524-1.105 2.524-2.468zm16.187-2.469c1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468 0-1.364 1.13-2.469 2.524-2.469zm21.234 2.469c0-1.364-1.13-2.469-2.525-2.469-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.395 0 2.525-1.105 2.525-2.468zm16.184-2.469c1.394 0 2.525 1.105 2.525 2.469 0 1.363-1.131 2.468-2.525 2.468s-2.524-1.105-2.524-2.468c0-1.364 1.13-2.469 2.524-2.469zm21.237 2.469c0-1.364-1.131-2.469-2.525-2.469s-2.524 1.105-2.524 2.469c0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.525-1.105 2.525-2.468zm16.184-2.469c1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468 0-1.364 1.13-2.469 2.524-2.469zm21.237 2.469c0-1.364-1.131-2.469-2.525-2.469s-2.524 1.105-2.524 2.469c0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.525-1.105 2.525-2.468zm-133.496-16.825c1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.395 0-2.525-1.105-2.525-2.468 0-1.364 1.13-2.469 2.525-2.469zm21.233 2.469c0-1.364-1.13-2.469-2.524-2.469-1.394 0-2.525 1.105-2.525 2.469 0 1.363 1.131 2.468 2.525 2.468s2.524-1.105 2.524-2.468zm16.187-2.469c1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468 0-1.364 1.13-2.469 2.524-2.469zm21.234 2.469c0-1.364-1.13-2.469-2.525-2.469-1.394 0-2.524 1.105-2.524 2.469 0 1.363 1.13 2.468 2.524 2.468 1.395 0 2.525-1.105 2.525-2.468zm16.184-2.469c1.394 0 2.525 1.105 2.525 2.469 0 1.363-1.131 2.468-2.525 2.468s-2.524-1.105-2.524-2.468c0-1.364 1.13-2.469 2.524-2.469zm21.237 2.469c0-1.364-1.131-2.469-2.525-2.469s-2.524 1.105-2.524 2.469c0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.525-1.105 2.525-2.468zm16.184-2.469c1.394 0 2.524 1.105 2.524 2.469 0 1.363-1.13 2.468-2.524 2.468-1.394 0-2.524-1.105-2.524-2.468 0-1.364 1.13-2.469 2.524-2.469zm21.237 2.469c0-1.364-1.131-2.469-2.525-2.469s-2.524 1.105-2.524 2.469c0 1.363 1.13 2.468 2.524 2.468 1.394 0 2.525-1.105 2.525-2.468zM150.976 89.124c1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.395 0-2.525-1.105-2.525-2.469 0-1.363 1.13-2.468 2.525-2.468zm21.233 2.468c0-1.363-1.13-2.468-2.524-2.468-1.394 0-2.525 1.105-2.525 2.468 0 1.364 1.131 2.469 2.525 2.469s2.524-1.105 2.524-2.469zm16.187-2.468c1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469 0-1.363 1.13-2.468 2.524-2.468zm21.234 2.468c0-1.363-1.13-2.468-2.525-2.468-1.394 0-2.524 1.105-2.524 2.468 0 1.364 1.13 2.469 2.524 2.469 1.395 0 2.525-1.105 2.525-2.469zm16.184-2.468c1.394 0 2.525 1.105 2.525 2.468 0 1.364-1.131 2.469-2.525 2.469s-2.524-1.105-2.524-2.469c0-1.363 1.13-2.468 2.524-2.468zm21.237 2.468c0-1.363-1.131-2.468-2.525-2.468s-2.524 1.105-2.524 2.468c0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.525-1.105 2.525-2.469zm16.184-2.468c1.394 0 2.524 1.105 2.524 2.468 0 1.364-1.13 2.469-2.524 2.469-1.394 0-2.524-1.105-2.524-2.469 0-1.363 1.13-2.468 2.524-2.468zm21.237 2.468c0-1.363-1.131-2.468-2.525-2.468s-2.524 1.105-2.524 2.468c0 1.364 1.13 2.469 2.524 2.469 1.394 0 2.525-1.105 2.525-2.469z"
+                                            fill="url(#paint4_linear_228_431)"></path>
+                                    </g>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_228_431" x1="152.25" y1="161.063" x2="154.33"
+                                            y2="4.773" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#fff"></stop>
+                                            <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
+                                        </linearGradient>
+                                        <linearGradient id="paint1_linear_228_431" x1="133.019" y1="80.334" x2="3.944"
+                                            y2="3.188" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#246151"></stop>
+                                            <stop offset=".422" stop-color="#A7C6BC"></stop>
+                                            <stop offset=".865" stop-color="#73CADC"></stop>
+                                        </linearGradient>
+                                        <linearGradient id="paint2_linear_228_431" x1="133.019" y1="165.839" x2="3.944"
+                                            y2="88.693" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#246151"></stop>
+                                            <stop offset=".422" stop-color="#A7C6BC"></stop>
+                                            <stop offset=".865" stop-color="#73CADC"></stop>
+                                        </linearGradient>
+                                        <linearGradient id="paint3_linear_228_431" x1="151.307" y1="80.335" x2="280.382"
+                                            y2="3.188" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#246151"></stop>
+                                            <stop offset=".422" stop-color="#A7C6BC"></stop>
+                                            <stop offset=".865" stop-color="#73CADC"></stop>
+                                        </linearGradient>
+                                        <linearGradient id="paint4_linear_228_431" x1="151.307" y1="165.839"
+                                            x2="280.382" y2="88.693" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#246151"></stop>
+                                            <stop offset=".422" stop-color="#A7C6BC"></stop>
+                                            <stop offset=".865" stop-color="#73CADC"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-8 lg:py-20" id="about">
+                        <h2 class="pb-2 text-4xl font-bold text-center dark:text-white">
+                            About Me
+                        </h2>
+                        <div class="mx-auto mb-16 border border-red-500 dark:border-red-400 w-36">
+                        </div>
+                        <div class="flex flex-wrap items-center">
+                            <div class="w-full px-4 mb-10 lg:w-1/2 lg:mb-0">
+                                <div class="relative">
+                                    <img src="https://i.postimg.cc/kGjX7T1M/pexels-andrea-piacquadio-3756679.jpg"
+                                        alt="aboutimage"
+                                        class="relative z-10 object-cover w-full h-full rounded-tl-[30px]">
+                                    <div
+                                        class="absolute hidden w-full h-full bg-red-300 rounded-tl-[30px] -top-2 right-2 lg:block">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full px-4 mb-10 lg:w-1/2 lg:mb-0 ">
+                                <h2 class="py-3 pl-2 mb-4 text-2xl font-bold text-gray-700 dark:text-gray-300">
+                                    I can design world by better UI/UX tools
+                                </h2>
+                                <ul
+                                    class="flex flex-wrap justify-between mb-10 w-full lg:w-[28rem] list-disc list-inside marker:text-red-500 ">
+                                    <li class="mb-3 text-base text-gray-600 dark:text-gray-400">
+                                        First name:Peter
+                                    </li>
+                                    <li class="mb-3 text-base text-gray-600 dark:text-gray-400">
+                                        Address: Kathmandu
+                                    </li>
+                                    <li class="mb-3 text-base text-gray-600 dark:text-gray-400">
+                                        Age: 27 years
+                                    </li>
+                                    <li class="mb-3 text-base text-gray-600 dark:text-gray-400">
+                                        Contact: 9827364531
+                                    </li>
+                                    <li class="mb-3 text-base text-gray-600 dark:text-gray-400">
+                                        Email: abc@gmail.com
+                                    </li>
+                                    <li class="mb-3 text-base text-gray-600 dark:text-gray-400">
+                                        Freelance: Available
+                                    </li>
+                                    <li class="mb-3 text-base text-gray-600 dark:text-gray-400">
+                                        Phone: +28921184010
+                                    </li>
+                                    <li class="mb-3 text-base text-gray-600 dark:text-gray-400">
+                                        Skype: Simon.Boris
+                                    </li>
+                                </ul>
+                                <a href="#"
+                                    class="px-6 py-2 text-red-500 transition-all transform border border-red-500 rounded-full hover:bg-red-600 dark:border-red-400 dark:hover:bg-red-500 dark:hover:text-gray-100 dark:hover:border-red-500 dark:text-red-400 hover:text-gray-100">
+                                    Hire Me
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-20" id="services">
+                        <h2 class="pb-2 text-4xl font-bold text-center dark:text-white">
+                            My Services
+                        </h2>
+                        <div class="mx-auto mb-16 border border-red-500 dark:border-red-400 w-36">
+                        </div>
+                        <div class="grid grid-cols-1 gap-4 lg:gap-8 md:grid-cols-2 lg:grid-cols-3">
+                            <div
+                                class="w-full p-8 transition-all bg-white rounded shadow dark:bg-gray-700 hover:shadow-lg">
+                                <div class="inline-block p-4 mb-6 bg-yellow-500 rounded-full">
+                                    <span class="text-gray-50">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-6 h-6 bi bi-code-slash" viewBox="0 0 16 16">
+                                            <path
+                                                d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
+                                        </svg></span>
+                                </div>
+                                <a href="#">
+                                    <h2 class="mb-4 text-2xl font-semibold dark:text-white"> Web Design </h2>
+                                </a>
+                                <p class="text-base text-gray-500 dark:text-gray-400">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate similique,
+                                    iure minus sed fugit obcaecati minima quam reiciendis dicta!
+                                </p>
+                            </div>
+                            <div
+                                class="w-full p-8 transition-all bg-white rounded shadow dark:bg-gray-700 hover:shadow-lg">
+                                <div class="inline-block p-4 mb-6 bg-red-500 rounded-full">
+                                    <span class="text-gray-50">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-6 h-6 bi bi-pencil-square" viewBox="0 0 16 16">
+                                            <path
+                                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z">
+                                            </path>
+                                            <path fill-rule="evenodd"
+                                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <a href="#">
+                                    <h2 class="mb-4 text-2xl font-semibold dark:text-white"> UI/UX </h2>
+                                </a>
+                                <p class="text-base text-gray-500 dark:text-gray-400">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate similique,
+                                    iure minus sed fugit obcaecati minima quam reiciendis dicta!
+                                </p>
+                            </div>
+                            <div
+                                class="w-full p-8 transition-all bg-white rounded shadow dark:bg-gray-700 hover:shadow-lg">
+                                <div class="inline-block p-4 mb-6 bg-teal-500 rounded-full">
+                                    <span class="text-gray-50">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-6 h-6 bi bi-phone" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
+                                            <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <a href="#">
+                                    <h2 class="mb-4 text-2xl font-semibold dark:text-white"> App Development </h2>
+                                </a>
+                                <p class="text-base text-gray-500 dark:text-gray-400">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate similique,
+                                    iure minus sed fugit obcaecati minima quam reiciendis dicta!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-20" id="portfolio">
+                        <h2 class="pb-2 text-4xl font-bold text-center dark:text-white">
+                            My Portfolio
+                        </h2>
+                        <div class="mx-auto mb-16 border border-red-500 dark:border-red-400 w-36">
+                        </div>
+                        <div class="flex flex-wrap mb-4 -mx-4">
+                            <div class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3">
+                                <div class="relative overflow-hidden shadow-lg group">
+                                    <img src="assets/images/java.jpg"
+                                        class="inset-0 object-cover object-center w-full transition duration-500 rounded-md group-hover:origin-center group-hover:scale-105 h-80"
+                                        alt="">
+                                    <div class="absolute inset-0 z-0 group-hover:bg-black opacity-60"></div>
+                                    <div class="absolute inset-0 flex flex-col items-start hidden p-6 group-hover:flex">
+                                        <span class="text-gray-400">2021</span>
+                                        <p class="mb-auto text-xl font-bold text-white lg:text-2xl">Lorem
+                                            ipsum dolor sit amet consectutar</p>
+                                        <a class="inline-block px-4 py-2 font-bold leading-loose transition duration-200 bg-transparent border-2 border-gray-400 rounded-full hover:border-white text-gray-50 hover:bg-white hover:text-gray-900"
+                                            href="project-details.html">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3">
+                                <div class="relative overflow-hidden shadow-lg group">
+                                    <img src="assets/images/dm.jpg"
+                                        class="inset-0 object-cover object-center w-full transition duration-500 rounded-md group-hover:origin-center group-hover:scale-105 h-80"
+                                        alt="">
+                                    <div class="absolute inset-0 z-0 group-hover:bg-black opacity-60"></div>
+                                    <div class="absolute inset-0 flex flex-col items-start hidden p-6 group-hover:flex">
+                                        <span class="text-gray-400">2021</span>
+                                        <p class="mb-auto text-xl font-bold text-white lg:text-2xl">Lorem
+                                            ipsum dolor sit amet consectutar</p>
+                                        <a class="inline-block px-4 py-2 font-bold leading-loose transition duration-200 bg-transparent border-2 border-gray-400 rounded-full hover:border-white text-gray-50 hover:bg-white hover:text-gray-900"
+                                            href="#">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3">
+                                <div class="relative overflow-hidden shadow-lg group">
+                                    <img src="assets/images/gra1.jpg"
+                                        class="inset-0 object-cover object-center w-full transition duration-500 rounded-md group-hover:origin-center group-hover:scale-105 h-80"
+                                        alt="">
+                                    <div class="absolute inset-0 z-0 group-hover:bg-black opacity-60"></div>
+                                    <div class="absolute inset-0 flex flex-col items-start hidden p-6 group-hover:flex">
+                                        <span class="text-gray-400">2021</span>
+                                        <p class="mb-auto text-xl font-bold text-white lg:text-2xl">Lorem
+                                            ipsum dolor sit amet consectutar</p>
+                                        <a class="inline-block px-4 py-2 font-bold leading-loose transition duration-200 bg-transparent border-2 border-gray-400 rounded-full hover:border-white text-gray-50 hover:bg-white hover:text-gray-900"
+                                            href="#">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3">
+                                <div class="relative overflow-hidden shadow-lg group">
+                                    <img src="assets/images/graphic.jpg"
+                                        class="inset-0 object-cover object-center w-full transition duration-500 rounded-md group-hover:origin-center group-hover:scale-105 h-80"
+                                        alt="">
+                                    <div class="absolute inset-0 z-0 group-hover:bg-black opacity-60"></div>
+                                    <div class="absolute inset-0 flex flex-col items-start hidden p-6 group-hover:flex">
+                                        <span class="text-gray-400">2021</span>
+                                        <p class="mb-auto text-xl font-bold text-white lg:text-2xl">Lorem
+                                            ipsum dolor sit amet consectutar</p>
+                                        <a class="inline-block px-4 py-2 font-bold leading-loose transition duration-200 bg-transparent border-2 border-gray-400 rounded-full hover:border-white text-gray-50 hover:bg-white hover:text-gray-900"
+                                            href="#">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3">
+                                <div class="relative overflow-hidden shadow-lg group">
+                                    <img src="assets/images/business.jpg"
+                                        class="inset-0 object-cover object-center w-full transition duration-500 rounded-md group-hover:origin-center group-hover:scale-105 h-80"
+                                        alt="">
+                                    <div class="absolute inset-0 z-0 group-hover:bg-black opacity-60"></div>
+                                    <div class="absolute inset-0 flex flex-col items-start hidden p-6 group-hover:flex">
+                                        <span class="text-gray-400">2021</span>
+                                        <p class="mb-auto text-xl font-bold text-white lg:text-2xl">Lorem
+                                            ipsum dolor sit amet consectutar</p>
+                                        <a class="inline-block px-4 py-2 font-bold leading-loose transition duration-200 bg-transparent border-2 border-gray-400 rounded-full hover:border-white text-gray-50 hover:bg-white hover:text-gray-900"
+                                            href="#">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3">
+                                <div class="relative overflow-hidden shadow-lg group">
+                                    <img src="assets/images/digital.jpg"
+                                        class="inset-0 object-cover object-center w-full transition duration-500 rounded-md group-hover:origin-center group-hover:scale-105 h-80"
+                                        alt="">
+                                    <div class="absolute inset-0 z-0 group-hover:bg-black opacity-60"></div>
+                                    <div class="absolute inset-0 flex flex-col items-start hidden p-6 group-hover:flex">
+                                        <span class="text-gray-400">2021</span>
+                                        <p class="mb-auto text-xl font-bold text-white lg:text-2xl">Lorem
+                                            ipsum dolor sit amet consectutar</p>
+                                        <a class="inline-block px-4 py-2 font-bold leading-loose transition duration-200 bg-transparent border-2 border-gray-400 rounded-full hover:border-white text-gray-50 hover:bg-white hover:text-gray-900"
+                                            href="#">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center">
+                            <a href="portfolio.html"
+                                class="px-6 py-3 text-gray-100 bg-red-500 rounded-full hover:bg-red-600 ">
+                                More Projects
+                            </a>
+                        </div>
+                    </div>
+                    <div class="py-20" id="resume">
+                        <h2 class="pb-2 text-4xl font-bold text-center dark:text-white">
+                            My Resume
+                        </h2>
+                        <div class="mx-auto mb-16 border border-red-500 dark:border-red-400 w-36">
+                        </div>
+                        <div class="flex flex-wrap items-center">
+                            <div class="w-full px-4 mb-6 lg:w-1/2">
+                                <div class="relative border-l border-red-500 dark:border-red-400">
+                                    <div class="mb-10 ml-8">
+                                        <span
+                                            class="absolute flex items-center justify-center w-6 h-6 bg-red-500 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-red-900">
+                                            <svg aria-hidden="true" class="w-3 h-3 text-gray-50 dark:text-red-300"
+                                                fill="currentColor" viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd"
+                                                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                        <span
+                                            class="bg-red-500 text-gray-50 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
+                                            2005-2008</span>
+                                        <h2
+                                            class="flex flex-wrap items-center mt-3 mb-2 text-2xl font-semibold text-gray-900 dark:text-white">
+                                            Java Programming
+                                            <span
+                                                class="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300 ml-3">
+                                                Envato</span>
+                                        </h2>
+                                        <p class="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400">
+                                            University of DVI
+                                        </p>
+                                        <p class="mt-3 mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                                            The training provided by universities in order to prepare people to work in
+                                            various sectors of the economy or areas of culture.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full px-4 mb-6 lg:w-1/2">
+                                <div class="relative border-l border-red-500 dark:border-red-400">
+                                    <div class="mb-10 ml-8">
+                                        <span
+                                            class="absolute flex items-center justify-center w-6 h-6 bg-red-500 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-red-900">
+                                            <svg aria-hidden="true" class="w-3 h-3 text-gray-50 dark:text-red-300"
+                                                fill="currentColor" viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd"
+                                                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                        <span
+                                            class="bg-red-500 text-gray-50 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
+                                            2009-2012</span>
+                                        <h2
+                                            class="flex flex-wrap items-center mt-3 mb-2 text-2xl font-semibold text-gray-900 dark:text-white">
+                                            Web Developer
+                                            <span
+                                                class="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300 ml-3">
+                                                Codeacademy</span>
+                                        </h2>
+                                        <p class="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400">
+                                            Google Out Tech
+                                        </p>
+                                        <p class="mt-3 mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                                            The training provided by universities in order to prepare people to work in
+                                            various sectors of the economy or areas of culture.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full px-4 mb-6 lg:w-1/2">
+                                <div class="relative border-l border-red-500 dark:border-red-400">
+                                    <div class="mb-10 ml-8">
+                                        <span
+                                            class="absolute flex items-center justify-center w-6 h-6 bg-red-500 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-red-900">
+                                            <svg aria-hidden="true" class="w-3 h-3 text-gray-50 dark:text-red-300"
+                                                fill="currentColor" viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd"
+                                                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                        <span
+                                            class="bg-red-500 text-gray-50 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
+                                            2013-2016</span>
+                                        <h2
+                                            class="flex flex-wrap items-center mt-3 mb-2 text-2xl font-semibold text-gray-900 dark:text-white">
+                                            React Developer
+                                            <span
+                                                class="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300 ml-3">
+                                                MIT</span>
+                                        </h2>
+                                        <p class="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400">
+                                            Superking College
+                                        </p>
+                                        <p class="mt-3 mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                                            The training provided by universities in order to prepare people to work in
+                                            various sectors of the economy or areas of culture.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full px-4 mb-6 lg:w-1/2">
+                                <div class="relative border-l border-red-500 dark:border-red-400">
+                                    <div class="mb-10 ml-8">
+                                        <span
+                                            class="absolute flex items-center justify-center w-6 h-6 bg-red-500 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-red-900">
+                                            <svg aria-hidden="true" class="w-3 h-3 text-gray-50 dark:text-red-300"
+                                                fill="currentColor" viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd"
+                                                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                        <span
+                                            class="bg-red-500 text-gray-50 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
+                                            2017-2020</span>
+                                        <h2
+                                            class="flex flex-wrap items-center mt-3 mb-2 text-2xl font-semibold text-gray-900 dark:text-white">
+                                            Node JS Developer
+                                            <span
+                                                class="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300 ml-3">
+                                                Google</span>
+                                        </h2>
+                                        <p class="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400">
+                                            App Developer Team
+                                        </p>
+                                        <p class="mt-3 mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                                            The training provided by universities in order to prepare people to work in
+                                            various sectors of the economy or areas of culture.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-20" id="resume">
+                        <h2 class="pb-2 text-4xl font-bold text-center dark:text-white">
+                            Latest from blog
+                        </h2>
+                        <div class="mx-auto mb-16 border border-red-500 dark:border-red-400 w-36">
+                        </div>
+                        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                            <div class="relative mb-5 overflow-hidden rounded-md group ">
+                                <a href="#">
+                                    <img class="object-cover w-full h-64 transition duration-500 rounded-md group-hover:origin-center hover:scale-105"
+                                        src="assets/images/business.jpg" alt="image"></a>
+                                <a href="#">
+                                    <h2 class="mt-6 text-xl font-semibold group-hover:text-red-500">The best to do
+                                        market
+                                        research for your
+                                        business
+                                        pLan.
+                                    </h2>
+                                </a>
+                                <div class="flex flex-wrap items-center mt-6 ">
+                                    <span
+                                        class="flex items-center pb-2 mr-4 text-gray-500 no-underline lg:pb-0 dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-3 h-3 bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                                            Admin</span>
+                                    </span>
+                                    <span
+                                        class="flex items-center pb-2 mr-4 text-gray-500 no-underline lg:pb-0 dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                                            May
+                                            10, 2023</span>
+                                    </span>
+                                    <span
+                                        class="flex items-center pb-2 mr-4 text-gray-500 no-underline lg:pb-0 dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-3 h-3 bi bi-chat-right-dots"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z">
+                                            </path>
+                                            <path
+                                                d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                                            6 comments</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="relative mb-5 overflow-hidden rounded-md group ">
+                                <a href="#">
+                                    <img class="object-cover w-full h-64 transition duration-500 rounded-md group-hover:origin-center hover:scale-105"
+                                        src="assets/images/java.jpg" alt="image"></a>
+                                <a href="#">
+                                    <h2 class="mt-6 text-xl font-semibold group-hover:text-red-500">The best to do
+                                        market
+                                        research for your
+                                        business
+                                        pLan.
+                                    </h2>
+                                </a>
+                                <div class="flex flex-wrap items-center mt-6 ">
+                                    <span
+                                        class="flex items-center pb-2 mr-4 text-gray-500 no-underline lg:pb-0 dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-3 h-3 bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                                            Admin</span>
+                                    </span>
+                                    <span
+                                        class="flex items-center pb-2 mr-4 text-gray-500 no-underline lg:pb-0 dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                                            May
+                                            10, 2023</span>
+                                    </span>
+                                    <span
+                                        class="flex items-center pb-2 mr-4 text-gray-500 no-underline lg:pb-0 dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-3 h-3 bi bi-chat-right-dots"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z">
+                                            </path>
+                                            <path
+                                                d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                                            6 comments</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="relative mb-5 overflow-hidden rounded-md group ">
+                                <a href="#">
+                                    <img class="object-cover w-full h-64 transition duration-500 rounded-md group-hover:origin-center hover:scale-105"
+                                        src="assets/images/dm.jpg" alt="image"></a>
+                                <a href="#">
+                                    <h2 class="mt-6 text-xl font-semibold group-hover:text-red-500">The best to do
+                                        market
+                                        research for your
+                                        business
+                                        pLan.
+                                    </h2>
+                                </a>
+                                <div class="flex flex-wrap items-center mt-6 ">
+                                    <span
+                                        class="flex items-center pb-2 mr-4 text-gray-500 no-underline lg:pb-0 dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-3 h-3 bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                                            Admin</span>
+                                    </span>
+                                    <span
+                                        class="flex items-center pb-2 mr-4 text-gray-500 no-underline lg:pb-0 dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-3 h-3 bi bi-calendar" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                                            May
+                                            10, 2023</span>
+                                    </span>
+                                    <span
+                                        class="flex items-center pb-2 mr-4 text-gray-500 no-underline lg:pb-0 dark:text-gray-400 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="w-3 h-3 bi bi-chat-right-dots"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z">
+                                            </path>
+                                            <path
+                                                d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z">
+                                            </path>
+                                        </svg>
+                                        <span class="ml-2 text-xs text-gray-500 dark:text-gray-400">
+                                            6 comments</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-20" id="contact">
+                        <h2 class="pb-2 text-4xl font-bold text-center dark:text-white">
+                            Contact with me
+                        </h2>
+                        <div class="mx-auto mb-16 border border-red-500 dark:border-red-400 w-36">
+                        </div>
+                        <div class="lg:grid-cols-[40%,1fr] grid-cols-1  grid gap-6 ">
+                            <div>
+                                <div class="">
+                                    <h2 class="mb-2 text-3xl font-bold dark:text-gray-400">Get In <span
+                                            class="text-red-600 dark:text-red-400">Touch</span>
+                                    </h2>
+                                    <p class="mb-6 text-base text-gray-500 ">
+                                        Please email us at info@gmail.com or call us at below contact offices</p>
+                                    <div class="flex items-center mb-6 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor"
+                                            class="w-4 h-4 text-gray-600 text-red-500 dark:text-red-400 bi bi-geo-alt"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z">
+                                            </path>
+                                            <path
+                                                d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z">
+                                            </path>
+                                        </svg>
+                                        <div
+                                            class="max-w-xl ml-2 text-base font-semibold tracking-wide text-gray-500 dark:text-gray-400">
+                                            Sukedhara, Kathmandu , Nepal
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center mb-6 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor"
+                                            class="w-4 h-4 text-red-500 dark:text-red-400 bi bi-telephone dark:text-gray-400"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z">
+                                            </path>
+                                        </svg>
+                                        <div
+                                            class="max-w-xl ml-2 text-base font-semibold tracking-wide text-gray-500 dark:text-gray-400">
+                                            <span> +977-014151329 ,</span> <span> +977-014151678</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center mb-6 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor"
+                                            class="w-4 h-4 text-red-500 dark:text-red-400 dark:text-gray-400 bi bi-envelope"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z">
+                                            </path>
+                                        </svg>
+                                        <div
+                                            class="max-w-xl ml-2 text-base font-semibold tracking-wide text-gray-500 dark:text-gray-400">
+                                            info@gmail.com
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6 bg-[#ffffff61] rounded-md">
+                                <form class="">
+                                    <div class="mb-6">
+                                        <label for="first-name"
+                                            class="block mb-2 text-sm font-semibold text-gray-700 uppercase dark:text-gray-400">
+                                            Full Name
+                                        </label>
+                                        <input id="first-name" type="text" placeholder="John Doe" required=""
+                                            class="block w-full px-4 py-3 mb-3 text-sm leading-tight text-gray-700 border border-gray-300 rounded dark:placeholder-gray-500 dark:bg-gray-900 dark:border-gray-900 dark:text-gray-400 focus:bg-white">
+                                    </div>
+                                    <div class="mb-6 ">
+                                        <label for="email"
+                                            class="block mb-2 text-sm font-semibold text-gray-700 uppercase dark:text-gray-400">
+                                            Email
+                                        </label>
+                                        <input id="email" type="email" placeholder="john163@gmail.com" required=""
+                                            class="block w-full px-4 py-3 mb-3 text-sm leading-tight text-gray-700 border border-gray-300 rounded dark:placeholder-gray-500 dark:bg-gray-900 dark:border-gray-900 dark:text-gray-400 focus:bg-white">
+                                    </div>
+                                    <div class="mb-6 ">
+                                        <label for="number"
+                                            class="block mb-2 text-sm font-semibold text-gray-700 uppercase dark:text-gray-400">
+                                            Phone
+                                        </label>
+                                        <input id="number" type="text" placeholder="+977-014151678" required=""
+                                            class="block w-full px-4 py-3 mb-3 text-sm leading-tight text-gray-700 border border-gray-300 rounded dark:placeholder-gray-500 dark:bg-gray-900 dark:border-gray-900 dark:text-gray-400 focus:bg-white">
+                                    </div>
+                                    <div class="mb-6 ">
+                                        <label for="message"
+                                            class="block mb-2 text-sm font-semibold text-gray-700 uppercase dark:text-gray-400">
+                                            Your Message
+                                        </label>
+                                        <textarea rows="4" type="message" placeholder="Tell us about your project..."
+                                            required=""
+                                            class="block w-full px-4 mb-4 leading-tight text-gray-700 border border-gray-300 rounded dark:placeholder-gray-500 py-7 dark:text-gray-400 dark:border-gray-900 dark:bg-gray-900 "></textarea>
+                                    </div>
+                                    <div class="flex justify-start w-auto ">
+                                        <button
+                                            class="relative block w-full px-6 py-2 overflow-hidden text-base font-medium text-white bg-red-500 rounded-full group md:w-auto hover:bg-red-600">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="py-6 bg-gray-100 dark:bg-gray-900 ">
+            <div class="max-w-6xl px-4 mx-auto">
+                <div class="flex flex-wrap items-center justify-between">
+                    <span class="text-gray-600 dark:text-gray-400">© Copyright 2022 . All Rights Reserved
+                    </span>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-red-500">Terms & Conditions</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script defer src=" https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js">
+    </script>
+</body>
+
+</html>

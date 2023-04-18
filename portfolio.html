@@ -1,0 +1,316 @@
+<html class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                },
+                fontFamily: {
+                    poppins: ['Poppins', 'sans-serif'],
+                    Montserrat: ['Montserrat', 'sans-serif']
+                },
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <title>
+        Document
+    </title>
+</head>
+
+<body class="font-poppins dark:bg-gray-900">
+    <section class="relative z-40  bg-[#012245] shadow lg:py-0 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="" x-data="{ openMenu : false }" :class="openMenu ? 'overflow-hidden' : 'overflow-visible' ">
+                <style>
+                    [x-cloak] {
+                        display: none !important;
+                    }
+                </style>
+                <header class="items-center justify-between px-4 lg:flex drop-shadow-sm">
+                    <div class="flex justify-between">
+                        <a href="index.html">
+                            <div class="h-[3rem] lg:w-24 md:h-[4rem]">
+                                <img src="assets/images/logo1.png" alt="logo" class="object-cover w-full h-full">
+                            </div>
+                        </a>
+                        <button class="align-middle lg:hidden " @click="openMenu = !openMenu" :aria-expanded="openMenu"
+                            aria-controls="mobile-navigation" aria-label="Navigation Menu" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-100 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul
+                        class="absolute hidden transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-10">
+                        <div
+                            class="relative flex items-center py-6 text-base font-medium text-gray-200 cursor-pointer dark:text-gray-300 group">
+                            <span class="capitalize ">
+                                Home</span>
+                            <div
+                                class="absolute left-0 invisible w-56 transition duration-300 bg-white border border-gray-300 shadow-md opacity-0 z-100 top-full dark:divide-gray-700 divide-dashed group-hover:opacity-100 group-hover:visible">
+                                <a href="index.html"
+                                    class="flex items-center px-2 py-2 text-sm text-gray-700 transition border-b border-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 dark:bg-gray-800">
+                                    Homepage 1
+                                </a>
+                                <a href="home2.html"
+                                    class="flex items-center px-2 py-2 text-sm text-gray-700 transition hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900">
+                                    Homepage 2
+                                </a>
+                            </div>
+                        </div>
+                        <li>
+                            <a class="text-sm text-gray-200 transition ease-in-out hover:text-gray-100"
+                                href="portfolio.html">
+                                Portfolio
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="hidden px-6 py-3 text-sm font-bold text-white transition duration-200 bg-[#FF014F] rounded-full lg:inline-flex hover:bg-blue-400"
+                        href="assets/cv.pdf" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="w-6 h-6 mr-2 bi bi-box-arrow-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z" />
+                            <path fill-rule="evenodd"
+                                d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z" />
+                        </svg>
+                        Download CV
+                    </a>
+                </header>
+                <nav id="mobile-navigation"
+                    class="fixed top-0 bottom-0 left-0 right-0 z-40 text-gray-100 bg-[#00000063]"
+                    :class="openMenu ? 'visible' : 'invisible' " x-cloak>
+                    <!-- UL Links -->
+                    <ul class="absolute top-0 bottom-0 left-0 right-0 z-10 py-8 transition-all bg-white dark:bg-gray-800 w-96 drop-shadow-2xl"
+                        :class="closemenu ? 'translate-x-0' : 'translate-x-full'">
+                        <li x-data="{ open: false }"
+                            class="relative text-gray-700 border-b dark:text-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 border-inherit">
+                            <a href="javascript:void(0)" @click="open = ! open"
+                                class="flex items-center p-4 text-gray-700 dark:hover:text-gray-100 group dark:text-gray-300 hover:text-blue-500">
+                                <span> Home </span>
+                                <span class="inline-block ml-auto  absolute right-0  left-[19rem] sidenav-arrow">
+                                    <svg class="w-3 h-3 group-" viewBox="0 0 10 6" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" data-config-id="auto-svg-3-1">
+                                        <path
+                                            d="M9.08329 0.666626C8.74996 0.333293 8.24996 0.333293 7.91663 0.666626L4.99996 3.58329L2.08329 0.666626C1.74996 0.333293 1.24996 0.333293 0.916626 0.666626C0.583293 0.999959 0.583293 1.49996 0.916626 1.83329L4.41663 5.33329C4.58329 5.49996 4.74996 5.58329 4.99996 5.58329C5.24996 5.58329 5.41663 5.49996 5.58329 5.33329L9.08329 1.83329C9.41663 1.49996 9.41663 0.999959 9.08329 0.666626Z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                            <div class="transition border-gray-500 dark:bg-gray-900 dropdown-section nested-menu"
+                                x-show="open">
+                                <ul
+                                    class="pl-3 ml-3 text-sm font-medium divide-y divide-gray-300 dark:divide-gray-600 divide-dashed">
+                                    <li class="flex group">
+                                        <a href="index.html"
+                                            class="flex items-center py-2 mr-4 no-underline group-hover:text-blue-600 dark:group-hover:text-gray-100 dark:text-gray-400 ">
+                                            <span
+                                                class="ml-2 text-sm text-gray-500 dark:group-hover:text-gray-100 group-hover:text-blue-600 dark:text-gray-400 ">
+                                                Homepage 1
+                                            </span></a>
+                                    </li>
+                                    <li class="flex group">
+                                        <a href="home2.html"
+                                            class="flex items-center py-2 mr-4 no-underline group-hover:text-blue-600 dark:group-hover:text-gray-100 dark:text-gray-400 ">
+                                            <span
+                                                class="ml-2 text-sm text-gray-500 dark:group-hover:text-gray-100 group-hover:text-blue-600 dark:text-gray-400 ">
+                                                Homepage 2
+                                            </span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li
+                            class="text-gray-700 border-b hover:bg-gray-100 dark:text-gray-300 dark:border-gray-700 border-inherit">
+                            <a href="portfolio.html" class="block p-4">Portfolio</a>
+                        </li>
+                    </ul>
+                    <!-- Close Button -->
+                    <button class="absolute top-0 bottom-0 right-0 z-10 left-80" @click="openMenu = !openMenu"
+                        :aria-expanded="openMenu" aria-controls="mobile-navigation" aria-label="Close Navigation Menu">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="absolute w-6 h-6 text-gray-700 hover:text-blue-600 dark:text-gray-400 top-2 left-2"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <section class="relative h-[300px]" style="background-image: url(assets/images/java.jpg); background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; ">
+        <div class="w-full h-full bg-[#0000008a] ">
+            <div class="relative h-full max-w-6xl mx-auto ">
+                <div class="absolute left-0 px-6 -translate-y-1/2 md:px-4 top-2/4">
+                    <div class="max-w-4xl px-4 mb-8">
+                        <h1 class="mb-4 text-2xl font-semibold leading-9 tracking-wider text-white lg:text-4xl">
+                            Project
+                        </h1>
+                        <nav class="flex" aria-label="Breadcrumb">
+                            <ol class="inline-flex flex-wrap items-center space-x-1 md:space-x-3">
+                                <li class="inline-flex items-center">
+                                    <a href="index.html"
+                                        class="inline-flex items-center text-sm font-medium text-gray-200 hover:text-gray-100 ">
+                                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                                            </path>
+                                        </svg>
+                                        Home
+                                    </a>
+                                </li>
+                                <li aria-current="page">
+                                    <div class="flex items-center">
+                                        <svg class="w-6 h-6 text-gray-200" fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span class="ml-1 text-sm font-medium text-gray-200 md:ml-2 ">
+                                            project
+                                        </span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="max-w-6xl px-4 py-10 mx-auto lg:py-20">
+        <h2 class="pb-2 text-4xl font-bold text-center dark:text-white">
+            My Portfolio
+        </h2>
+        <div class="mx-auto mb-10 border border-red-500 dark:border-red-400 w-36">
+        </div>
+        <div class="flex flex-wrap -mx-4">
+            <div class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3">
+                <div class="relative overflow-hidden shadow-lg group">
+                    <img src="assets/images/java.jpg"
+                        class="inset-0 object-cover object-center w-full transition duration-500 rounded-md group-hover:origin-center group-hover:scale-105 h-80"
+                        alt="">
+                    <div class="absolute inset-0 z-0 group-hover:bg-black opacity-60"></div>
+                    <div class="absolute inset-0 flex-col items-start hidden p-6 group-hover:flex">
+                        <span class="text-gray-400">2021</span>
+                        <p class="mb-auto text-xl font-bold text-white lg:text-2xl">Lorem
+                            ipsum dolor sit amet consectutar</p>
+                        <a class="inline-block px-4 py-2 font-bold leading-loose transition duration-200 bg-transparent border-2 border-gray-400 rounded-full hover:border-white text-gray-50 hover:bg-white hover:text-gray-900"
+                            href="project-details.html">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3">
+                <div class="relative overflow-hidden shadow-lg group">
+                    <img src="assets/images/dm.jpg"
+                        class="inset-0 object-cover object-center w-full transition duration-500 rounded-md group-hover:origin-center group-hover:scale-105 h-80"
+                        alt="">
+                    <div class="absolute inset-0 z-0 group-hover:bg-black opacity-60"></div>
+                    <div class="absolute inset-0 flex-col items-start hidden p-6 group-hover:flex">
+                        <span class="text-gray-400">2021</span>
+                        <p class="mb-auto text-xl font-bold text-white lg:text-2xl">Lorem
+                            ipsum dolor sit amet consectutar</p>
+                        <a class="inline-block px-4 py-2 font-bold leading-loose transition duration-200 bg-transparent border-2 border-gray-400 rounded-full hover:border-white text-gray-50 hover:bg-white hover:text-gray-900"
+                            href="project-details.html">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3">
+                <div class="relative overflow-hidden shadow-lg group">
+                    <img src="assets/images/gra1.jpg"
+                        class="inset-0 object-cover object-center w-full transition duration-500 rounded-md group-hover:origin-center group-hover:scale-105 h-80"
+                        alt="">
+                    <div class="absolute inset-0 z-0 group-hover:bg-black opacity-60"></div>
+                    <div class="absolute inset-0 flex-col items-start hidden p-6 group-hover:flex">
+                        <span class="text-gray-400">2021</span>
+                        <p class="mb-auto text-xl font-bold text-white lg:text-2xl">Lorem
+                            ipsum dolor sit amet consectutar</p>
+                        <a class="inline-block px-4 py-2 font-bold leading-loose transition duration-200 bg-transparent border-2 border-gray-400 rounded-full hover:border-white text-gray-50 hover:bg-white hover:text-gray-900"
+                            href="project-details.html">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3">
+                <div class="relative overflow-hidden shadow-lg group">
+                    <img src="assets/images/graphic.jpg"
+                        class="inset-0 object-cover object-center w-full transition duration-500 rounded-md group-hover:origin-center group-hover:scale-105 h-80"
+                        alt="">
+                    <div class="absolute inset-0 z-0 group-hover:bg-black opacity-60"></div>
+                    <div class="absolute inset-0 flex-col items-start hidden p-6 group-hover:flex">
+                        <span class="text-gray-400">2021</span>
+                        <p class="mb-auto text-xl font-bold text-white lg:text-2xl">Lorem
+                            ipsum dolor sit amet consectutar</p>
+                        <a class="inline-block px-4 py-2 font-bold leading-loose transition duration-200 bg-transparent border-2 border-gray-400 rounded-full hover:border-white text-gray-50 hover:bg-white hover:text-gray-900"
+                            href="project-details.html">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3">
+                <div class="relative overflow-hidden shadow-lg group">
+                    <img src="assets/images/business.jpg"
+                        class="inset-0 object-cover object-center w-full transition duration-500 rounded-md group-hover:origin-center group-hover:scale-105 h-80"
+                        alt="">
+                    <div class="absolute inset-0 z-0 group-hover:bg-black opacity-60"></div>
+                    <div class="absolute inset-0 flex-col items-start hidden p-6 group-hover:flex">
+                        <span class="text-gray-400">2021</span>
+                        <p class="mb-auto text-xl font-bold text-white lg:text-2xl">Lorem
+                            ipsum dolor sit amet consectutar</p>
+                        <a class="inline-block px-4 py-2 font-bold leading-loose transition duration-200 bg-transparent border-2 border-gray-400 rounded-full hover:border-white text-gray-50 hover:bg-white hover:text-gray-900"
+                            href="project-details.html">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full px-4 mb-8 md:w-1/2 lg:w-1/3">
+                <div class="relative overflow-hidden shadow-lg group">
+                    <img src="assets/images/digital.jpg"
+                        class="inset-0 object-cover object-center w-full transition duration-500 rounded-md group-hover:origin-center group-hover:scale-105 h-80"
+                        alt="">
+                    <div class="absolute inset-0 z-0 group-hover:bg-black opacity-60"></div>
+                    <div class="absolute inset-0 flex-col items-start hidden p-6 group-hover:flex">
+                        <span class="text-gray-400">2021</span>
+                        <p class="mb-auto text-xl font-bold text-white lg:text-2xl">Lorem
+                            ipsum dolor sit amet consectutar</p>
+                        <a class="inline-block px-4 py-2 font-bold leading-loose transition duration-200 bg-transparent border-2 border-gray-400 rounded-full hover:border-white text-gray-50 hover:bg-white hover:text-gray-900"
+                            href="project-details.html">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-6 bg-gray-100 dark:bg-gray-900 ">
+        <div class="max-w-6xl px-4 mx-auto">
+            <div class="flex flex-wrap items-center justify-between">
+                <span class="text-gray-600 dark:text-gray-400">© Copyright 2022 . All Rights Reserved
+                </span>
+                <a href="project-details.html" class="text-gray-600 dark:text-gray-400 hover:text-red-500">Terms &
+                    Conditions</a>
+            </div>
+        </div>
+    </section>
+    <script defer src=" https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js">
+    </script>
+</body>
+
+</html>
